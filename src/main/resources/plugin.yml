@@ -1,5 +1,5 @@
 name: LoginQueue
-main: com.raphfrk.bukkit.loginqueue.LoginQueue
+main: com.raphfrk.bukkit.loginqueue2.LoginQueue
 load: startup
 author: Raphfrk
 website: http://forums.bukkit.org/threads/admn-login-queue-v2-13-queues-players-when-server-is-full-1337.390/
