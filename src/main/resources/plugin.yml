@@ -1,0 +1,8 @@
+name: LoginQueue
+main: com.raphfrk.bukkit.loginqueue.LoginQueue
+load: startup
+author: Raphfrk
+website: http://forums.bukkit.org/threads/admn-login-queue-v2-13-queues-players-when-server-is-full-1337.390/
+website-dev: http://forums.bukkit.org/threads/admn-login-queue-v2-13-queues-players-when-server-is-full-1337.390/
+description: Login Queue for Bukkit
+version: 2.14
