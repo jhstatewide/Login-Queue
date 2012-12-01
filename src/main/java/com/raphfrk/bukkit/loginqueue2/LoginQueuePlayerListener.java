@@ -7,7 +7,10 @@ import org.bukkit.event.Event;
 import org.bukkit.event.EventException;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
+import java.util.logging.Logger;
 import org.bukkit.plugin.EventExecutor;
 
 import com.raphfrk.bukkit.loginqueue2.LoginQueue.PlayerInfo;
@@ -15,6 +18,7 @@ import com.raphfrk.bukkit.loginqueue2.LoginQueue.PlayerInfo;
 public class LoginQueuePlayerListener implements EventExecutor, Listener {
 
 	LoginQueue p;
+        Logger log = Logger.getLogger("Minecraft");
 
 	LoginQueuePlayerListener(LoginQueue p) {
 		this.p = p;
@@ -26,6 +30,7 @@ public class LoginQueuePlayerListener implements EventExecutor, Listener {
 		}
 	}
 
+        @EventHandler(priority = EventPriority.HIGH)
 	public void onPlayerLogin(PlayerLoginEvent event) {
 
 		Player player = event.getPlayer();
@@ -57,6 +62,7 @@ public class LoginQueuePlayerListener implements EventExecutor, Listener {
 				message = message.replaceAll("%pop", population);
 				message = message.replaceAll("%max", maxPopulation);
 				message = message.replaceAll("%pos", position);
+                                log.info("Disallowing " + playerName + " for " + message);
 				event.disallow(Result.KICK_FULL, message);
 				return;
 			}
