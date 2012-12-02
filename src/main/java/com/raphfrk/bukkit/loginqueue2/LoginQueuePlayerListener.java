@@ -62,8 +62,7 @@ public class LoginQueuePlayerListener implements EventExecutor, Listener {
 				message = message.replaceAll("%pop", population);
 				message = message.replaceAll("%max", maxPopulation);
 				message = message.replaceAll("%pos", position);
-                                log.info("Disallowing " + playerName + " for " + message);
-				event.disallow(Result.KICK_FULL, message);
+				event.disallow(Result.KICK_OTHER, message);
 				return;
 			}
 		}

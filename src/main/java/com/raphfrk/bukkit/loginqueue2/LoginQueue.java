@@ -112,7 +112,7 @@ public class LoginQueue extends JavaPlugin {
 
 		pf.save();
 
-		getServer().getPluginManager().registerEvent(PlayerLoginEvent.class, playerListener, EventPriority.NORMAL, playerListener, this);
+		getServer().getPluginManager().registerEvent(PlayerLoginEvent.class, playerListener, EventPriority.HIGH, playerListener, this);
 
 		if(sqlEnabled.get()) {
 			Connection conn = null;
